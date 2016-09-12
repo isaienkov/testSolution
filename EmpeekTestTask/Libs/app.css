@@ -1,0 +1,30 @@
+﻿        body {
+            background-color: #F7F7F7;
+        }
+        table.info {
+           border: 3px #B3B3B3 solid;
+           border-collapse: collapse;
+        }
+        th.info {
+            border: 1px #B3B3B3 solid;
+            background-color:  #B3B3B3;
+            color: #FFFFFF;
+            height: 20px;
+            width: 150px;
+        }
+        td {
+            border: 1px #B3B3B3 solid;
+        }
+
+        table.result {
+           border: 3px #F4F4F4 solid;
+           border-collapse: collapse;
+        }
+        tr.result {
+            border: none;
+        }
+        td.result {
+            width: 460px;
+            border: none;
+            height: 25px;
+        }

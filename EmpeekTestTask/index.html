@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html ng-app="fileSystemApp">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>File System</title>
+
+    <link rel="stylesheet" type="text/css" href="../Libs/app.css">
+    <script src="../Libs/angular.js"></script>
+    <script src="../Libs/controller.js"></script>
+</head>
+
+<body ng-controller="FileSystemAppCtrl">
+    <div>
+         <table class="info">
+            <tr>
+                <th class="info">Less 10 Mb</th>
+                <th class="info">10 Mb - 50 Mb</th>
+                <th class="info">More 100 Mb</th>
+            </tr>
+            <tr>
+                <td style="text-align:center">{{path.SmallFiles}}<br></td>
+                <td style="text-align:center">{{path.MiddleFiles}}<br></td>
+                <td style="text-align:center">{{path.HardFiles}}<br></td>
+            </tr>
+        </table><br>
+        
+        <p style="font-size: 20px"><b>Errors: {{path.ErrorStatus}}</b></p>
+
+        <p style="font-size: 20px"><b>Current path: {{path.PathName}}</b></p>
+        <a ng-click="GetNewData(path.LastName); GetPath(path.LastName, 0);" ng-hide="!showdisc.Status" href="">...</a>
+
+            <table class="result" ng-hide="showdisc.Status"  ng-show="path.ShowDisc">
+                <tr class="result" ng-repeat="disc in disc" >
+                    <td class="result"><a ng-click="GetNewData(disc.DiscName); GetPath(disc.DiscName, 1); ChangeStatus(true);" href="">{{disc.DiscName}}</a></td>
+                </tr>
+            </table>
+
+     
+        <table class="result">
+            <tr class="result" ng-repeat="document in document" >
+                <td class="result"><a ng-click="GetNewData(document.Pat); GetPath(document.Pat, 1);" href="">{{document.Name}}</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
